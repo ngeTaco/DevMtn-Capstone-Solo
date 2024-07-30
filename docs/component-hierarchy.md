@@ -55,7 +55,7 @@
 	- Edit Mode Toggle
 	- View Mode
 		- Name
-	-Edit Mode
+	- Edit Mode
 		- New entry button
 		- Text Entry (Pre-filled if editing)
 		- Save button
