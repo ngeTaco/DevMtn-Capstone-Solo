@@ -3,13 +3,13 @@
 	- Navigation breadcrumbs
 	- Edit Mode Toggle
 	- View Mode
-		- Location Slab Button
+		- Location Tiles Button
 			- Icon Spot
 			- Name
 			- Arrow Nav Button
 	- Edit/New Entry Mode
 		- New entry button
-		- Location Slab Button
+		- Location Tiles Button
 			- Icon Spot
 			- Text Entry (Pre-filled if editing)
 			- Save button
@@ -19,13 +19,13 @@
 	- Navigation breadcrumbs
 	- Edit Mode Toggle
 	- View Mode
-		- Container Slab Button
+		- Container Tile Button
 			- Fill State Spot
 			- Name
 			- Arrow Nav Button
 	- Edit/New Entry Mode
 		- New entry button
-		- Location Slab Button
+		- Location Tiles Button
 			- Fill State Spot
 				- Drop down with Percentages
 			- Text Entry (Pre-filled if editing)
@@ -36,13 +36,13 @@
 	- Navigation breadcrumbs
 	- Edit Mode Toggle
 	- View Mode
-		- Content Slab
+		- Content Tile
 			- Name
 			- Image thumbnail
 				- Image Preview on Hover
 	- Edit/New Entry Mode
 		- New entry button
-		- Content Slab
+		- Content Tile
 			- Text Entry (Pre-filled if editing)
 			- Upload Image button
 				- transparent original image if editing

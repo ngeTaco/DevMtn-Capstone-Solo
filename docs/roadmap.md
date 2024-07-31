@@ -24,6 +24,7 @@ Pages will have an edit and view mode
 		- 100%, 75%, 50%, 25%, 0%
 - Container Page
 	- User upload 1 image per item
+	- display thumbnail on tile
 	- Hovering over thumbnail displays larger image
 
 ## Iteration 3
@@ -34,3 +35,8 @@ Pages will have an edit and view mode
 		- box name in handwritten style font
 - Container Page
 	- Carousel of all Content images in Container
+
+## Iteration 4
+- Desktop view to open page next to selection (i.e. Location to Container)
+	- Visual breadcrumb concept
+	- Single page app display
