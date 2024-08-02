@@ -11,6 +11,11 @@
     "seed": "node server/seeds/seed.js"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@fontsource/roboto": "^5.0.13",
+    "@mui/icons-material": "^5.16.6",
+    "@mui/material": "^5.16.6",
     "axios": "^1.7.2",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
