@@ -1,0 +1,23 @@
+.App-Header {
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+    border-radius: 25px;
+    text-align: left;
+    position: relative;
+    flex-direction: column;
+}
+
+.Location-Tile {
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+    border-radius: 25px;
+    text-align: left;
+    position: relative;
+}
+
+.Location-Tile img {
+    border-radius: 50%;
+}
+
