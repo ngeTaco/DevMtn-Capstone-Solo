@@ -1,4 +1,4 @@
-import { AddBox, Edit, Save, Delete } from '@mui/icons-material';
+import { AddBox, Edit, Save, Delete, ArrowForward } from '@mui/icons-material';
 
 export function AddIcon() {
     return (
@@ -21,5 +21,11 @@ export function SaveIcon() {
 export function DeleteIcon() {
     return (
         <Delete />
+    )
+}
+
+export function ForwardIcon() {
+    return (
+        <ArrowForward />
     )
 }
