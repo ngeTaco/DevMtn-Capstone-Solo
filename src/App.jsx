@@ -1,4 +1,5 @@
 import './App.css'
+import Header from './components/common/Header.jsx'
 
 
 function App() {
@@ -6,16 +7,7 @@ function App() {
   return (
     <div>
 
-      <header className="App-Header">
-        <article>
-          <h1>Storage Tracker</h1>
-          <p>Breadcrumbs / Placeholder</p>
-          <div>
-            <button>Add Unit</button>
-            <button>Edit Mode</button>
-          </div>
-        </article>
-      </header>
+      <Header />
 
 
       <article>
