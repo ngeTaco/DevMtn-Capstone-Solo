@@ -12,10 +12,8 @@ function App() {
 
       <HomeBody />
 
-
     </div>
   )
 }
-
 
 export default App
