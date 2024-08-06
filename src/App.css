@@ -1,3 +1,7 @@
+* {
+    background-color: whitesmoke; 
+}
+
 .App-Header {
     display: flex;
     width: 50%;
@@ -17,7 +21,11 @@
     position: relative;
 }
 
-.Location-Tile img {
-    border-radius: 50%;
+article.Home div {
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+    border-radius: 25px;
+    text-align: left;
+    align-items: center;
 }
-

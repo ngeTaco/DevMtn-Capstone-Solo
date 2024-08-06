@@ -1,17 +1,20 @@
-import { Typography } from "@mui/material"
+import { Typography, Box } from "@mui/material"
 import { CirclePlaceHolder } from "../common/Placeholders.jsx"
 import { EditIcon, ForwardIcon, SaveIcon } from "../common/Icons.jsx"
 
 export default function HomeBody(props) {
     return (
-        <article>
-            <div className="Location-Tile">
+        <article className="Home">
+            <Box sx={{
+                bgcolor: 'common.white',
+                border: '2px solid black'
+            }}>
                 <CirclePlaceHolder />
                 <Typography component="h2" variant="h4" >Location01</Typography>
                 <ForwardIcon />
                 <EditIcon />
                 <SaveIcon />
-            </div>
+            </Box>
             <div className="Location-Tile">
                 <CirclePlaceHolder />
                 <Typography component="h2" variant="h4" >Location02</Typography>
