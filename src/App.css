@@ -1,31 +1,26 @@
-* {
-    background-color: whitesmoke; 
-}
 
-.App-Header {
+article.Home {
     display: flex;
-    width: 50%;
-    justify-content: space-evenly;
-    border-radius: 25px;
-    text-align: left;
-    position: relative;
     flex-direction: column;
-}
-
-.Location-Tile {
-    display: flex;
-    width: 50%;
-    justify-content: space-evenly;
-    border-radius: 25px;
-    text-align: left;
-    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
 }
 
 article.Home div {
     display: flex;
     width: 50%;
-    justify-content: space-evenly;
+    justify-content: space-between;
     border-radius: 25px;
     text-align: left;
     align-items: center;
+    margin: 1rem;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
 }

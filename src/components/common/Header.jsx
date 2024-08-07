@@ -5,7 +5,7 @@ import BreadcrumbsNav from "./Breadcrumbs.jsx"
 
 export default function Header(props) {
     return (
-        <header className="App-Header">
+        <header>
             <article>
                 <Typography component="h1" variant="h2" >Storage Tracker</Typography>
                 <BreadcrumbsNav />
