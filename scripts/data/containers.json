@@ -1,0 +1,50 @@
+[
+    {
+        "locationId": 3,
+        "containerName": "Carboard - Toys",
+        "fillPercent": 50
+    },
+    {
+        "locationId": 2,
+        "containerName": "Carboard - kitchen",
+        "fillPercent": 100
+    },
+    {
+        "locationId": 2,
+        "containerName": "Carboard - bathroom",
+        "fillPercent": 25
+    },
+    {
+        "locationId": 2,
+        "containerName": "plastic box - kitchen",
+        "fillPercent": 50
+    },
+    {
+        "locationId": 2,
+        "containerName": "plastic box - bathroom",
+        "fillPercent": 50
+    },
+    {
+        "locationId": 2,
+        "containerName": "Carboard - bedroom",
+        "fillPercent": 75
+    },
+    {
+        "locationId": 3,
+        "containerName": "large box - statues",
+        "fillPercent": 100
+    },
+    {
+        "locationId": 1,
+        "containerName": "safe box - jewelry"
+    },
+    {
+        "locationId": 2,
+        "containerName": "large plastic box - clothes",
+        "fillPercent": 50
+    },
+    {
+        "locationId": 3,
+        "containerName": "Carboard - more toys"
+    }
+]

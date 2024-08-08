@@ -1,0 +1,14 @@
+[
+    {
+        "locationName": "Garage",
+        "locationType": "House"
+    },
+    {
+        "locationName": "Basement",
+        "locationType": "House"
+    },
+    {
+        "locationName": "Unit 42 at Salt Lake Storage Rental",
+        "locationType": "Warehouse"
+    }
+]
