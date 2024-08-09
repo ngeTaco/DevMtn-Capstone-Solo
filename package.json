@@ -8,7 +8,9 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "seed": "node server/seeds/seed.js"
+    "init": "createdb storagetracker",
+    "seed": "node scripts/seed.js",
+    "fullinit": "npm run init && npm run seed"
   },
   "dependencies": {
     "@emotion/react": "^11.13.0",
@@ -22,6 +24,7 @@
     "lodash": "^4.17.21",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.4",
+    "pg": "^8.12.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router": "^6.26.0",

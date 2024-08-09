@@ -16,8 +16,7 @@
     },
     {
         "containerId": 4,
-        "contentName": "Microwave",
-        "imageLink": "https://picsum.photos/id/534/300"
+        "contentName": "Microwave"
     },
     {
         "containerId": 5,
@@ -41,18 +40,15 @@
     },
     {
         "containerId": 2,
-        "contentName": "Oven",
-        "imageLink": "https://picsum.photos/id/534/300"
+        "contentName": "Oven"
     },
     {
         "containerId": 3,
-        "contentName": "Toaster Oven",
-        "imageLink": "https://picsum.photos/id/534/300"
+        "contentName": "Toaster Oven"
     },
     {
         "containerId": 4,
-        "contentName": "Blender",
-        "imageLink": "https://picsum.photos/id/534/300"
+        "contentName": "Blender"
     },
     {
         "containerId": 5,
@@ -86,8 +82,7 @@
     },
     {
         "containerId": 4,
-        "contentName": "Toaster Oven",
-        "imageLink": "https://picsum.photos/id/534/300"
+        "contentName": "Toaster Oven"
     },
     {
         "containerId": 5,
@@ -131,8 +126,7 @@
     },
     {
         "containerId": 1,
-        "contentName": "Kakashi",
-        "imageLink": "https://picsum.photos/id/534/300"
+        "contentName": "Kakashi"
     },
     {
         "containerId": 7,
@@ -181,9 +175,8 @@
     },
     {
         "containerId": 7,
-        "contentName": "Cell",
-        "imageLink": "https://picsum.photos/id/534/300"
-    },
+        "contentName": "Cell"
+        },
     {
         "containerId": 10,
         "contentName": "Franky",
@@ -218,5 +211,9 @@
         "containerId": 10,
         "contentName": "Brook",
         "imageLink": "https://picsum.photos/id/534/300"
+    },
+    {
+        "containerId": 7,
+        "contentName": "Majin 21"
     }
 ]
