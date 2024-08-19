@@ -73,4 +73,85 @@ app.get('/api/all/contents', async (req, res) => {
     res.json(allContents);
 });
 
+//NOTE Update Names endpoints
+// Update a location name
+app.post('/api/location/:locationId', async (req, res) => {
+    const { locationId } = req.params;
+    const { locationName } = req.body;
+    const location = await Location.findByPk(locationId);
+    
+    location.locationName = locationName;
+    await location.save();
+    res.json(location);
+});
+
+// Update a container name
+app.post('/api/container/:containerId', async (req, res) => {
+    const { containerId } = req.params;
+    const { containerName } = req.body;
+    const container = await Container.findByPk(containerId);
+    
+    container.containerName = containerName;
+    await container.save();
+    res.json(container);
+});
+
+// Update a content name
+app.post('/api/content/:contentId', async (req, res) => {
+    const { contentId } = req.params;
+    const { contentName } = req.body;
+    const content = await Content.findByPk(contentId);
+    
+    content.contentName = contentName;
+    await content.save();
+    res.json(content);
+});
+
+//NOTE Update parent locator for container and content
+// Update the locationId of a container
+app.post('/api/container/:containerId/location', async (req, res) => {
+    const { containerId } = req.params;
+    const { locationId } = req.body;
+    const container = await Container.findByPk(containerId);
+
+    container.locationId = locationId;
+    await container.save();
+    res.json(container);
+});
+
+// Update the containerId of a content
+app.post('/api/content/:contentId/container', async (req, res) => {
+    const { contentId } = req.params;
+    const { containerId } = req.body;
+    const content = await Content.findByPk(contentId);
+
+    content.containerId = containerId;
+    await content.save();
+    res.json(content);
+});
+
+//NOTE Create new location, container, and contents
+// Create a new location
+app.post('/api/location', async (req, res) => {
+    const { locationName = 'New Location', locationType = 'warehouse' } = req.body;
+    const newLocation = await Location.create({ locationName, locationType });
+    res.json(newLocation);
+});
+
+// Create a new container
+app.post('/api/container', async (req, res) => {
+    const { containerName = 'New Container', locationId } = req.body;
+    const newContainer = await Container.create({ containerName, locationId });
+    res.json(newContainer);
+});
+
+// Create a new content
+app.post('/api/content', async (req, res) => {
+    const { contentName = 'New Item', containerId } = req.body;
+    const newContent = await Content.create({ contentName, containerId });
+    res.json(newContent);
+});
+
+
+
 ViteExpress.listen(app, port, () => console.log(`Server is listening on http://localhost:${port}`));
