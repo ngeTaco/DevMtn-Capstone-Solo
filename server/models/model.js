@@ -1,6 +1,6 @@
 import { DataTypes, Model } from 'sequelize';
 import util from 'util';
-import db from './db.js';
+import db from '../../src/db.js';
 
 
 // Define Location Table

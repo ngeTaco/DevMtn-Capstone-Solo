@@ -2,7 +2,7 @@ import express from 'express';
 import session from 'express-session';
 import morgan from 'morgan';
 import ViteExpress from 'vite-express';
-import { Location, Container, Content } from '../src/model.js'
+import { Location, Container, Content } from './models/model.js'
 import appRouter from './routes/index.js';
 
 const app = express();
