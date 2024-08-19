@@ -152,6 +152,42 @@ app.post('/api/content', async (req, res) => {
     res.json(newContent);
 });
 
+//NOTE Delete endpoints for a location, container, and contents
+// Delete a location
+app.delete('/api/location/:locationId', async (req, res) => {
+    const { locationId } = req.params;
+    await Location.destroy({ where: { locationId: locationId } });
+    res.sendStatus(204);
+});
+
+// Delete a container
+app.delete('/api/container/:containerId', async (req, res) => {
+    const { containerId } = req.params;
+    await Container.destroy({ where: { containerId: containerId } });
+    res.sendStatus(204);
+});
+
+// Delete a content
+app.delete('/api/content/:contentId', async (req, res) => {
+    const { contentId } = req.params;
+    await Content.destroy({ where: { contentId: contentId } });
+    res.sendStatus(204);
+});
+
+//NOTE Delete all entries within a parent locator
+// Delete all containers with the same locationId
+app.delete('/api/containers/:locationId', async (req, res) => {
+    const { locationId } = req.params;
+    await Container.destroy({ where: { locationId } });
+    res.sendStatus(204);
+});
+
+// Delete all contents with the same containerId
+app.delete('/api/contents/:containerId', async (req, res) => {
+    const { containerId } = req.params;
+    await Content.destroy({ where: { containerId } });
+    res.sendStatus(204);
+});
 
 
 ViteExpress.listen(app, port, () => console.log(`Server is listening on http://localhost:${port}`));
