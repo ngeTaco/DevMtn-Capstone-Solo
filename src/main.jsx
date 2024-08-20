@@ -1,18 +1,44 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import Home from './pages/home.jsx'
+import Location from './pages/location.jsx'
+import Container from './pages/container.jsx'
 import './index.css'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "location/:locationId",
+    loader: ({params}) => {
+      return({locationId: params.locationId})
+    },
+    element: <Location />,
+  },
+  {
+    path: "container/:containerId",
+    loader: ({params}) => {
+      return({containerId: params.containerId})
+    },
+    element: <Container />,
+  },
+]);
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )
 
@@ -23,3 +49,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 // instead of line 15 do router provier
 
 //outlet from router-dom into all of the pages
+

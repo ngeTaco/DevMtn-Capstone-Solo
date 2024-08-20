@@ -2,7 +2,7 @@ import { Typography, Box } from "@mui/material"
 import { CirclePlaceHolder } from "../common/Placeholders.jsx"
 import HomeButtons from "./HomeButtons.jsx"
 
-export default function HomeTile(props) {
+export default function HomeTile({ locationId, name }) {
     return (
         <Box sx={{
             bgcolor: 'grey.100',
@@ -11,10 +11,12 @@ export default function HomeTile(props) {
         }}>
             <section>
                 <CirclePlaceHolder />
-                <Typography component="h2" variant="h4" >Location01</Typography>
+                <Typography component="h2" variant="h4" >{name}</Typography>
             </section>
             <section>
-                <HomeButtons />
+                <HomeButtons 
+                    locationId={locationId}
+                />
             </section>
         </Box>
     )

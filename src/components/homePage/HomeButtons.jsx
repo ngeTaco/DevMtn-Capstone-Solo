@@ -1,16 +1,19 @@
 import { Button, IconButton } from '@mui/material';
 import { Edit, Save, Delete, ArrowForward } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
-export default function HomeButtons() {
+export default function HomeButtons({ locationId }) {
     return (
         <>
-            <Button
-            color='primary'
-            variant='outlined'
-            size='large'
-            >
-                <ArrowForward />
-            </Button>
+            <Link to={`location/${locationId}`}>
+                <Button
+                    color='primary'
+                    variant='outlined'
+                    size='large'
+                >
+                    <ArrowForward />
+                </Button>
+            </Link>
 
             <IconButton color="secondary">
                 <Edit />
