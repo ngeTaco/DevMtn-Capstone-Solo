@@ -13,25 +13,37 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import Root from './root.jsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-  },
-  {
-    path: "location/:locationId",
-    loader: ({params}) => {
-      return({locationId: params.locationId})
-    },
-    element: <Location />,
-  },
-  {
-    path: "container/:containerId",
-    loader: ({params}) => {
-      return({containerId: params.containerId})
-    },
-    element: <Container />,
+    element: <Root />,
+    handle: { crumb: (data) => <span>Home</span> },
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "location/:locationId",
+        loader: ({ params }) => {
+          return ({ locationId: params.locationId })
+        },
+        element: <Location />,
+        handle: { crumb: (data) => <span>Location {data.locationId}</span> },
+        children: [
+          {
+            path: "container/:containerId",
+            loader: ({ params }) => {
+              return ({ containerId: params.containerId })
+            },
+            element: <Container />,
+            handle: { crumb: (data) => <span>Container {data.containerId}</span> }
+          },
+        ]
+      },
+    ]
   },
 ]);
 

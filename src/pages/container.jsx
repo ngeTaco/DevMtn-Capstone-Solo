@@ -1,4 +1,3 @@
-import './App.css'
 import { useLoaderData } from 'react-router-dom'
 import Header from '../components/common/Header.jsx'
 
