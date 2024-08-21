@@ -1,16 +1,19 @@
 import { useLoaderData } from 'react-router-dom'
 import Header from '../components/common/Header.jsx'
+import ContainerBody from '../components/containerPage/ContainerBody.jsx'
 
 
 function Container() {
     const containerId = useLoaderData().containerId
-    console.log("containerid", containerId)
+    console.log("containerId", containerId)
 
     return (
         <div>
 
             <Header />
-            <p>this is the container page</p>
+            <ContainerBody
+                containerId={containerId}
+            />
 
         </div>
     )

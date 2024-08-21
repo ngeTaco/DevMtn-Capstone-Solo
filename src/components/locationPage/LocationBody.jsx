@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
-import LocationTile from "./LocationTile";
+import LocationTile from "./LocationTile.jsx";
 import axios from "axios";
 
 export default function LocationBody(props) {
-    console.log("props", props)
 
     const locationId = props.locationId
-
-    console.log("locate", locationId)
     const [containerData, setContainerData] = useState([])
 
     const getContainers = () => {

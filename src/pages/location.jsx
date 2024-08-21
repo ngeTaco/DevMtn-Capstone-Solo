@@ -1,6 +1,7 @@
 import { useLoaderData } from 'react-router-dom'
 import Header from '../components/common/Header.jsx'
 import LocationBody from '../components/locationPage/LocationBody.jsx'
+import { Outlet } from 'react-router-dom'
 
 
 function Location() {
@@ -13,7 +14,6 @@ function Location() {
             <LocationBody
                 locationId={locationId}
             />
-
         </div>
     )
 }
