@@ -26,12 +26,12 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "location/:locationId",
+        path: "location/:locationId/*",
         loader: ({ params }) => {
           return ({ locationId: params.locationId })
         },
         element: <Location />,
-        handle: { crumb: (data) => <span>Location {data.locationId}</span> },
+        handle: { navTo: (data) => `/location/${data.locationId}`, crumb: (data) => <span>Location {data.locationId}</span> },
         children: [
           {
             path: "container/:containerId",
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
               return ({ containerId: params.containerId })
             },
             element: <Container />,
-            handle: { crumb: (data) => <span>Container {data.containerId}</span> }
+            handle: { navTo: (data) => `/location/${data.locationId}`, crumb: (data) => <span>Container {data.containerId}</span> }
           },
         ]
       },

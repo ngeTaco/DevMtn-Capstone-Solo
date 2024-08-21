@@ -4,8 +4,8 @@ import ContainerBody from '../components/containerPage/ContainerBody.jsx'
 
 
 function Container() {
-    const containerId = useLoaderData().containerId
-    console.log("containerId", containerId)
+    const {containerId} = useLoaderData()
+    console.log("containerLoaderData", containerId)
 
     return (
         <div>
