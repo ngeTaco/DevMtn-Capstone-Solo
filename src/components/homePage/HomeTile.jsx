@@ -11,7 +11,7 @@ export default function HomeTile({ locationId, name }) {
         }}>
             <section>
                 <CirclePlaceHolder />
-                <Typography component="h2" variant="h4" >{name}</Typography>
+                <Typography component="h2" variant="h6" >{name}</Typography>
             </section>
             <section>
                 <HomeButtons 

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import HomeTile from "./HomeTile";
 import axios from "axios";
 
-export default function HomeBody(props) {
+export default function HomeBody() {
     const [locationData, setLocationData] = useState([])
 
     const getLocations = () => {
@@ -20,9 +20,9 @@ export default function HomeBody(props) {
             {locationData.map((location) => {
                 return (
                     <HomeTile
-                    key={location.locationId}
-                    locationId={location.locationId}
-                    name={location.locationName}
+                        key={location.locationId}
+                        locationId={location.locationId}
+                        name={location.locationName}
                     />
                 )
             })

@@ -15,9 +15,13 @@ export default function HomeButtons({ locationId }) {
                 </Button>
             </Link>
 
-            <IconButton color="secondary">
+            <Button
+                color="secondary"
+                variant='outlined'
+                size='large'
+            >
                 <Edit />
-            </IconButton>
+            </Button>
 
             <IconButton color="secondary">
                 <Save />
