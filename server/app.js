@@ -107,28 +107,28 @@ app.post('/api/content/:contentId', async (req, res) => {
     res.json(content);
 });
 
-//NOTE Update parent locator for container and content
-// Update the locationId of a container
-app.post('/api/container/:containerId/location', async (req, res) => {
-    const { containerId } = req.params;
-    const { locationId } = req.body;
-    const container = await Container.findByPk(containerId);
+//NOTE Update parent locator for container and content (Not being used in current iteration)
+// // Update the locationId of a container
+// app.post('/api/container/:containerId/location', async (req, res) => {
+//     const { containerId } = req.params;
+//     const { locationId } = req.body;
+//     const container = await Container.findByPk(containerId);
 
-    container.locationId = locationId;
-    await container.save();
-    res.json(container);
-});
+//     container.locationId = locationId;
+//     await container.save();
+//     res.json(container);
+// });
 
-// Update the containerId of a content
-app.post('/api/content/:contentId/container', async (req, res) => {
-    const { contentId } = req.params;
-    const { containerId } = req.body;
-    const content = await Content.findByPk(contentId);
+// // Update the containerId of a content
+// app.post('/api/content/:contentId/container', async (req, res) => {
+//     const { contentId } = req.params;
+//     const { containerId } = req.body;
+//     const content = await Content.findByPk(contentId);
 
-    content.containerId = containerId;
-    await content.save();
-    res.json(content);
-});
+//     content.containerId = containerId;
+//     await content.save();
+//     res.json(content);
+// });
 
 //NOTE Create new location, container, and contents
 // Create a new location

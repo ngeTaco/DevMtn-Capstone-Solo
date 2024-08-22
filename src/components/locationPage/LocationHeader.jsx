@@ -2,7 +2,7 @@ import { Button, IconButton } from '@mui/material';
 import { Edit, Save, Delete, ArrowBack, Add } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 
-export default function LocationHeader({ containerId }) {
+export default function LocationHeader({ locationId, newContainer }) {
     return (
         <>
             <Link to={'/'}>
@@ -19,6 +19,7 @@ export default function LocationHeader({ containerId }) {
                 color="secondary"
                 variant='outlined'
                 size='large'
+                onClick={() => newContainer(locationId)}
             >
                 <Add />
             </Button>

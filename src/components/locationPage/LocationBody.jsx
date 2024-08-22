@@ -34,10 +34,19 @@ export default function LocationBody(props) {
             })
     }
 
+    // Create new Container in the location
+    const newContainer = (locationId) => {
+        axios.post('/api/container', { locationId })
+        .then(() => {
+            getContainers()
+        })
+    }
+
     return (
         <article className="Home">
             <LocationHeader
-            // containerId={container.containerId}
+            locationId={locationId}
+            newContainer={newContainer}
             />
             {containerData.map((container) => {
                 return (
