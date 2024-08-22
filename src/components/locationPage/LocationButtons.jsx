@@ -1,7 +1,6 @@
 import { Button, IconButton } from '@mui/material';
 import { Edit, Save, Delete, ArrowForward } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 
 export default function LocationButtons({ containerId, deleteContainer }) {
     return (

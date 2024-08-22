@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import HomeTile from "./HomeTile";
 import axios from "axios";
+import HomeHeader from "./HomeHeader";
 
 export default function HomeBody() {
     const [locationData, setLocationData] = useState([])
@@ -17,6 +18,7 @@ export default function HomeBody() {
 
     return (
         <article className="Home">
+            <HomeHeader />
             {locationData.map((location) => {
                 return (
                     <HomeTile
