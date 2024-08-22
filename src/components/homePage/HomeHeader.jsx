@@ -1,35 +1,17 @@
-import { Button, IconButton } from '@mui/material';
-import { Edit, Save, Delete, ArrowForward } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
+import { Add } from '@mui/icons-material';
 
-export default function HomeHeader({ locationId }) {
+export default function HomeHeader({ newLocation }) {
     return (
         <>
-            <Link to={`location/${locationId}`}>
-                <Button
-                    color='primary'
-                    variant='outlined'
-                    size='large'
-                >
-                    <ArrowForward />
-                </Button>
-            </Link>
-
             <Button
                 color="secondary"
                 variant='outlined'
                 size='large'
+                onClick={() => newLocation()}
             >
-                <Edit />
+                <Add />
             </Button>
-
-            <IconButton color="secondary">
-                <Save />
-            </IconButton>
-
-            <IconButton color="warning">
-                <Delete />
-            </IconButton>
         </>
     )
 };

@@ -2,7 +2,7 @@ import { Button, IconButton } from '@mui/material';
 import { Edit, Save, Delete, ArrowForward } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 
-export default function HomeButtons({ locationId }) {
+export default function HomeButtons({ locationId, deleteLocation }) {
     return (
         <>
             <Link to={`location/${locationId}`}>
@@ -27,7 +27,7 @@ export default function HomeButtons({ locationId }) {
                 <Save />
             </IconButton>
 
-            <IconButton color="warning">
+            <IconButton color="warning" onClick={() => deleteLocation(locationId)}>
                 <Delete />
             </IconButton>
         </>

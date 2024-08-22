@@ -2,7 +2,7 @@ import { Typography, Box } from "@mui/material"
 import { CirclePlaceHolder } from "../common/Placeholders.jsx"
 import HomeButtons from "./HomeButtons.jsx"
 
-export default function HomeTile({ locationId, name }) {
+export default function HomeTile({ locationId, name, deleteLocation }) {
     return (
         <Box sx={{
             bgcolor: 'grey.100',
@@ -16,6 +16,7 @@ export default function HomeTile({ locationId, name }) {
             <section>
                 <HomeButtons 
                     locationId={locationId}
+                    deleteLocation={deleteLocation}
                 />
             </section>
         </Box>

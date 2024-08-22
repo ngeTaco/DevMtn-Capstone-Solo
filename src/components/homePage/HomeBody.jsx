@@ -6,6 +6,7 @@ import HomeHeader from "./HomeHeader";
 export default function HomeBody() {
     const [locationData, setLocationData] = useState([])
 
+    // Get all Locations in db
     const getLocations = () => {
         axios.get('http://localhost:8000/api/all/locations')
             .then(res => {
@@ -16,15 +17,42 @@ export default function HomeBody() {
         getLocations, []
     )
 
+    // Delete the Containers in the selected Location
+    const deleteLocationContainers = (locationId) => {
+        axios.delete(`/api/containers/${locationId}`)
+            .then(res => {
+                getLocations()
+            })
+    }
+
+    // Delete the selected Location 
+    const deleteLocation = (locationId) => {
+        axios.delete(`/api/location/${locationId}`)
+            .then(res => {
+                deleteLocationContainers(locationId)
+            })
+    }
+
+    // Create new Location
+    const newLocation = () => {
+        axios.post('/api/location')
+        .then(() => {
+            getLocations()
+        })
+    }
+
     return (
         <article className="Home">
-            <HomeHeader />
+            <HomeHeader 
+            newLocation={newLocation}
+            />
             {locationData.map((location) => {
                 return (
                     <HomeTile
                         key={location.locationId}
                         locationId={location.locationId}
                         name={location.locationName}
+                        deleteLocation={deleteLocation}
                     />
                 )
             })
