@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ContainerTile from "./ContainerTile.jsx";
+import ContainerHeader from "./ContainerHeader.jsx";
 
 export default function ContainerBody(props) {
 
@@ -19,6 +20,7 @@ export default function ContainerBody(props) {
 
     return (
         <article className="Home">
+            <ContainerHeader />
             {contentData.map((content) => {
                 return (
                     <ContainerTile

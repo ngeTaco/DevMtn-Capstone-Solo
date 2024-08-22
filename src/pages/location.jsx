@@ -16,13 +16,6 @@ function Location() {
                 locationId={locationId}
             />
             <Outlet />
-            {/* <Routes>
-                <Route
-                    path="container/:containerId"
-                    element={<Container />}
-                    loader={({ params }) => { console.log("loaderParams", params); return { containerId: params.containerId } }}
-                />
-            </Routes> */}
 
         </div>
     )
@@ -30,7 +23,9 @@ function Location() {
 
 export default Location
 
-// useState showparentmisc inside of useEffect vanilla javascript to read url, if it shows container, set parent to false, if not, keep parent to true
+// useState showparentmisc inside of useEffect vanilla javascript to read url,
+// if url shows container, set parent to false,
+// if not, keep parent to true
 
 // const currentUrl = window.location.href;
 // console.log(currentUrl);

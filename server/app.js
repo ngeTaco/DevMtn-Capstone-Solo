@@ -204,7 +204,7 @@ app.delete('/api/contents/:containerId', async (req, res) => {
     const { containerId } = req.params;
     
     await Content.destroy({ where: { containerId } });
-    return res.sendStatus(200).json({ message: 'Contents Removed' });
+    return res.status(200).json({ message: 'Contents Removed' });
 });
 
 

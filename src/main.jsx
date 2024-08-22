@@ -31,7 +31,6 @@ const router = createBrowserRouter([
           return ({ locationId: params.locationId })
         },
         element: <Location />,
-        handle: { navTo: (data) => `/location/${data.locationId}`, crumb: (data) => <span>Location {data.locationId}</span> },
         children: [
           {
             path: "container/:containerId",
@@ -39,7 +38,6 @@ const router = createBrowserRouter([
               return ({ containerId: params.containerId })
             },
             element: <Container />,
-            handle: { navTo: (data) => `/location/${data.locationId}`, crumb: (data) => <span>Container {data.containerId}</span> }
           },
         ]
       },

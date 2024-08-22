@@ -2,7 +2,8 @@ import { Typography, Box } from "@mui/material"
 import { SquarePlaceHolder } from "../common/Placeholders.jsx"
 import LocationButtons from "./LocationButtons.jsx"
 
-export default function LocationTile({ containerId, name }) {
+export default function LocationTile({ containerId, name, deleteContainer }) {
+
     return (
         <Box sx={{
             bgcolor: 'grey.100',
@@ -16,6 +17,7 @@ export default function LocationTile({ containerId, name }) {
             <section>
                 <LocationButtons 
                     containerId={containerId}
+                    deleteContainer={deleteContainer}
                 />
             </section>
         </Box>

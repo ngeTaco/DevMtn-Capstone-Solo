@@ -1,12 +1,11 @@
 import { Button, IconButton } from '@mui/material';
 import { Edit, Save, Delete, ArrowForward } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 
-export default function LocationButtons({ containerId, deleteContainer }) {
+export default function HomeHeader({ locationId }) {
     return (
         <>
-            <Link to={`container/${containerId}`}>
+            <Link to={`location/${locationId}`}>
                 <Button
                     color='primary'
                     variant='outlined'
@@ -28,7 +27,7 @@ export default function LocationButtons({ containerId, deleteContainer }) {
                 <Save />
             </IconButton>
 
-            <IconButton color="warning" onClick={() => deleteContainer(containerId)}>
+            <IconButton color="warning">
                 <Delete />
             </IconButton>
         </>
