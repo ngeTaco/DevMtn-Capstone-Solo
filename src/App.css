@@ -24,3 +24,9 @@ section {
     align-items: center;
     padding-left: 10px;
 }
+
+.BodyHeader {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}

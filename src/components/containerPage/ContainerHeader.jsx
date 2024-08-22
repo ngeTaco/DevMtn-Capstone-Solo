@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function ContainerHeader({ containerId, newContent }) {
     return (
-        <>
+        <div className="BodyHeader">
             <Link to={'/'}>
                 <Button
                     color='primary'
@@ -23,6 +23,6 @@ export default function ContainerHeader({ containerId, newContent }) {
             >
                 <Add />
             </Button>
-        </>
+        </div>
     )
 };
