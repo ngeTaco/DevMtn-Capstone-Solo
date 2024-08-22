@@ -156,22 +156,40 @@ app.post('/api/content', async (req, res) => {
 // Delete a location
 app.delete('/api/location/:locationId', async (req, res) => {
     const { locationId } = req.params;
+    const location = await Location.findByPk(locationId);
+
+    if (!location) {
+        return res.status(400).json({ error: 'Location not found' });
+    }
+
     await Location.destroy({ where: { locationId: locationId } });
-    res.sendStatus(204);
+    res.sendStatus(204).json({ error: 'Location Removed' });
 });
 
 // Delete a container
 app.delete('/api/container/:containerId', async (req, res) => {
     const { containerId } = req.params;
+    const container = await Container.findByPk(containerId);
+
+    if (!container) {
+        return res.status(400).json({ error: 'Container not found' });
+    }
+
     await Container.destroy({ where: { containerId: containerId } });
-    res.sendStatus(204);
+    res.sendStatus(204).json({ error: 'Container Removed' });
 });
 
 // Delete a content
 app.delete('/api/content/:contentId', async (req, res) => {
     const { contentId } = req.params;
+    const content = await Content.findByPk(contentId);
+
+    if (!content) {
+        return res.status(400).json({ error: 'Content not found' });
+    }
+
     await Content.destroy({ where: { contentId: contentId } });
-    res.sendStatus(204);
+    res.sendStatus(204).json({ error: 'Content Removed' });
 });
 
 //NOTE Delete all entries within a parent locator
