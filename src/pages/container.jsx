@@ -5,7 +5,6 @@ import ContainerBody from '../components/containerPage/ContainerBody.jsx'
 
 function Container() {
     const {containerId} = useLoaderData()
-    console.log("containerLoaderData", containerId)
 
     return (
         <div>

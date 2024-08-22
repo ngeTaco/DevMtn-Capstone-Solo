@@ -1,8 +1,7 @@
-import { Route, useLoaderData, Routes } from 'react-router-dom'
+import { useLoaderData } from 'react-router-dom'
 import Header from '../components/common/Header.jsx'
 import LocationBody from '../components/locationPage/LocationBody.jsx'
 import { Outlet } from 'react-router-dom'
-import Container from './container.jsx'
 
 
 function Location() {

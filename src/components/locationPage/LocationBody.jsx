@@ -8,6 +8,7 @@ export default function LocationBody(props) {
     const locationId = props.locationId
     const [containerData, setContainerData] = useState([])
 
+    // Get and Set Container for the current Location
     const getContainers = () => {
         axios.get(`http://localhost:8000/api/containers/${locationId}`)
             .then(res => {
@@ -26,7 +27,7 @@ export default function LocationBody(props) {
             })
     }
 
-    // Delete the selected container 
+    // Delete the selected Container 
     const deleteContainer = (containerId) => {
         axios.delete(`/api/container/${containerId}`)
             .then(res => {
@@ -34,7 +35,7 @@ export default function LocationBody(props) {
             })
     }
 
-    // Create new Container in the location
+    // Create new Container in the Location
     const newContainer = (locationId) => {
         axios.post('/api/container', { locationId })
         .then(() => {

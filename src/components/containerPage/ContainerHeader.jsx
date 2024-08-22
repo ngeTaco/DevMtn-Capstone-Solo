@@ -2,7 +2,7 @@ import { Button } from '@mui/material';
 import { ArrowBack, Add } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 
-export default function ContainerHeader({ containerId }) {
+export default function ContainerHeader({ containerId, newContent }) {
     return (
         <>
             <Link to={'/'}>
@@ -19,6 +19,7 @@ export default function ContainerHeader({ containerId }) {
                 color="secondary"
                 variant='outlined'
                 size='large'
+                onClick={() => newContent(containerId)}
             >
                 <Add />
             </Button>

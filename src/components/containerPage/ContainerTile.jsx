@@ -1,7 +1,8 @@
 import { Typography, Box } from "@mui/material"
 import ContainerButtons from "./ContainerButtons.jsx"
 
-export default function ContainerTile({ contentId, name }) {
+export default function ContainerTile({ contentId, name, deleteContent }) {
+
     return (
         <Box sx={{
             bgcolor: 'grey.100',
@@ -14,6 +15,7 @@ export default function ContainerTile({ contentId, name }) {
             <section>
                 <ContainerButtons 
                     contentId={contentId}
+                    deleteContent={deleteContent}
                 />
             </section>
         </Box>

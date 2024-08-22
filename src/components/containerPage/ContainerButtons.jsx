@@ -1,7 +1,7 @@
 import { Button, IconButton } from '@mui/material';
 import { Edit, Save, Delete } from '@mui/icons-material';
 
-export default function ContainerButtons({ contentId }) {
+export default function ContainerButtons({ contentId, deleteContent }) {
     return (
         <>
             <Button
@@ -16,7 +16,7 @@ export default function ContainerButtons({ contentId }) {
                 <Save />
             </IconButton>
 
-            <IconButton color="warning">
+            <IconButton color="warning" onClick={() => deleteContent(contentId)}>
                 <Delete />
             </IconButton>
         </>
