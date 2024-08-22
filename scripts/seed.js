@@ -1,4 +1,4 @@
-import { Location, Container, Content } from '../src/model.js';
+import { Location, Container, Content } from '../server/models/model.js';
 import db from '../src/db.js';
 import locationData from './data/locations.json' assert { type: 'json' };
 import containerData from './data/containers.json' assert { type: 'json' };

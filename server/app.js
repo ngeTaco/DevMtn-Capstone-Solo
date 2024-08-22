@@ -79,7 +79,7 @@ app.post('/api/location/:locationId', async (req, res) => {
     const { locationId } = req.params;
     const { locationName } = req.body;
     const location = await Location.findByPk(locationId);
-    
+
     location.locationName = locationName;
     await location.save();
     res.json(location);
@@ -90,7 +90,7 @@ app.post('/api/container/:containerId', async (req, res) => {
     const { containerId } = req.params;
     const { containerName } = req.body;
     const container = await Container.findByPk(containerId);
-    
+
     container.containerName = containerName;
     await container.save();
     res.json(container);
@@ -101,7 +101,7 @@ app.post('/api/content/:contentId', async (req, res) => {
     const { contentId } = req.params;
     const { contentName } = req.body;
     const content = await Content.findByPk(contentId);
-    
+
     content.contentName = contentName;
     await content.save();
     res.json(content);
@@ -158,12 +158,12 @@ app.delete('/api/location/:locationId', async (req, res) => {
     const { locationId } = req.params;
     const location = await Location.findByPk(locationId);
 
-    if (!location) {
-        return res.status(400).json({ error: 'Location not found' });
+    if (location) {
+        await Location.destroy({ where: { locationId: locationId } });
+        return res.status(200).json({ message: 'Location Removed' });
     }
+    return res.status(400).json({ error: 'Location not found' });
 
-    await Location.destroy({ where: { locationId: locationId } });
-    res.sendStatus(204).json({ error: 'Location Removed' });
 });
 
 // Delete a container
@@ -171,12 +171,11 @@ app.delete('/api/container/:containerId', async (req, res) => {
     const { containerId } = req.params;
     const container = await Container.findByPk(containerId);
 
-    if (!container) {
-        return res.status(400).json({ error: 'Container not found' });
+    if (container) {
+        await Container.destroy({ where: { containerId: containerId } });
+        return res.status(200).json({ message: 'Container Removed' });        
     }
-
-    await Container.destroy({ where: { containerId: containerId } });
-    res.sendStatus(204).json({ error: 'Container Removed' });
+    return res.status(400).json({ error: 'Container not found' });
 });
 
 // Delete a content
@@ -184,27 +183,28 @@ app.delete('/api/content/:contentId', async (req, res) => {
     const { contentId } = req.params;
     const content = await Content.findByPk(contentId);
 
-    if (!content) {
-        return res.status(400).json({ error: 'Content not found' });
+    if (content) {
+        await Content.destroy({ where: { contentId: contentId } });
+        return res.status(200).json({ message: 'Content Removed' });        
     }
-
-    await Content.destroy({ where: { contentId: contentId } });
-    res.sendStatus(204).json({ error: 'Content Removed' });
+    return res.status(400).json({ error: 'Content not found' });
 });
 
 //NOTE Delete all entries within a parent locator
 // Delete all containers with the same locationId
 app.delete('/api/containers/:locationId', async (req, res) => {
     const { locationId } = req.params;
+    
     await Container.destroy({ where: { locationId } });
-    res.sendStatus(204);
+    return res.status(200).json({ message: 'Containers Removed' });
 });
 
 // Delete all contents with the same containerId
 app.delete('/api/contents/:containerId', async (req, res) => {
     const { containerId } = req.params;
+    
     await Content.destroy({ where: { containerId } });
-    res.sendStatus(204);
+    return res.sendStatus(200).json({ message: 'Contents Removed' });
 });
 
 
