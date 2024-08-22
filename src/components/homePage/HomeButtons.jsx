@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 
 export default function HomeButtons({ locationId, deleteLocation }) {
     return (
-        <>
+        <div className="TileButtons">
             <Link to={`location/${locationId}`}>
                 <Button
                     color='primary'
                     variant='outlined'
                     size='large'
+                    sx={{ ml: 2 }}
                 >
                     <ArrowForward />
                 </Button>
@@ -19,17 +20,24 @@ export default function HomeButtons({ locationId, deleteLocation }) {
                 color="secondary"
                 variant='outlined'
                 size='large'
+                sx={{ ml: 2 }}
             >
                 <Edit />
             </Button>
 
-            <IconButton color="secondary">
+            <IconButton
+                color="secondary"
+                sx={{ ml: 2 }}
+            >
                 <Save />
             </IconButton>
 
-            <IconButton color="warning" onClick={() => deleteLocation(locationId)}>
+            <IconButton
+                color="warning"
+                sx={{ ml: 2 }}
+                onClick={() => deleteLocation(locationId)}>
                 <Delete />
             </IconButton>
-        </>
+        </div>
     )
 };

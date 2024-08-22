@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom';
 
 export default function LocationButtons({ containerId, deleteContainer }) {
     return (
-        <>
+        <div className="TileButtons">
             <Link to={`container/${containerId}`}>
                 <Button
                     color='primary'
                     variant='outlined'
                     size='large'
+                    sx={{ ml: 2 }}
+
                 >
                     <ArrowForward />
                 </Button>
@@ -19,17 +21,25 @@ export default function LocationButtons({ containerId, deleteContainer }) {
                 color="secondary"
                 variant='outlined'
                 size='large'
+                sx={{ ml: 2 }}
             >
                 <Edit />
             </Button>
 
-            <IconButton color="secondary">
+            <IconButton
+                color="secondary"
+                sx={{ ml: 2 }}
+            >
                 <Save />
             </IconButton>
 
-            <IconButton color="warning" onClick={() => deleteContainer(containerId)}>
+            <IconButton
+                color="warning"
+                sx={{ ml: 2 }}
+                onClick={() => deleteContainer(containerId)}
+            >
                 <Delete />
             </IconButton>
-        </>
+        </div>
     )
 };
