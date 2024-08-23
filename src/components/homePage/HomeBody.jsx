@@ -36,15 +36,23 @@ export default function HomeBody() {
     // Create new Location
     const newLocation = () => {
         axios.post('/api/location')
-        .then(() => {
-            getLocations()
-        })
+            .then(() => {
+                getLocations()
+            })
+    }
+
+    // Change a Location Name
+    const changeLocationName = (locationId, newLocationName) => {
+        axios.put(`/api/location/${locationId}`, { locationName: newLocationName })
+            .then(() => {
+                getLocations()
+            })
     }
 
     return (
         <article className="Home">
-            <HomeHeader 
-            newLocation={newLocation}
+            <HomeHeader
+                newLocation={newLocation}
             />
             {locationData.map((location) => {
                 return (
