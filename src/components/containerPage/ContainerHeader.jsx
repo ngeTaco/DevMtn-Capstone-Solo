@@ -1,19 +1,23 @@
 import { Button } from '@mui/material';
 import { ArrowBack, Add } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-export default function ContainerHeader({ containerId, newContent }) {
+export default function ContainerHeader({ containerId, newContent, setShowContainer }) {
+    const navigate = useNavigate();
+
     return (
         <div className="BodyHeader">
-            <Link to={'/'}>
                 <Button
                     color='primary'
                     variant='outlined'
                     size='large'
+                    onClick={() => {
+                        // setShowContainer(true)
+                        navigate(-1)
+                    }}
                 >
                     <ArrowBack />
                 </Button>
-            </Link>
 
             <Button
                 color="secondary"

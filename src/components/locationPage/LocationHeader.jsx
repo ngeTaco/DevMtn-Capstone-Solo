@@ -1,19 +1,20 @@
 import { Button } from '@mui/material';
 import { ArrowBack, Add } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function LocationHeader({ locationId, newContainer }) {
+    const navigate = useNavigate();
+
     return (
         <div className="BodyHeader">
-            <Link to={'/'}>
                 <Button
                     color='primary'
                     variant='outlined'
                     size='large'
+                    onClick={() => navigate(-1)}
                 >
                     <ArrowBack />
                 </Button>
-            </Link>
 
             <Button
                 color="secondary"
