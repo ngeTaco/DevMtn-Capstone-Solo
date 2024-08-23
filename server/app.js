@@ -75,7 +75,7 @@ app.get('/api/all/contents', async (req, res) => {
 
 //NOTE Update Names endpoints
 // Update a location name
-app.post('/api/location/:locationId', async (req, res) => {
+app.put('/api/location/:locationId', async (req, res) => {
     const { locationId } = req.params;
     const { locationName } = req.body;
     const location = await Location.findByPk(locationId);
@@ -86,7 +86,7 @@ app.post('/api/location/:locationId', async (req, res) => {
 });
 
 // Update a container name
-app.post('/api/container/:containerId', async (req, res) => {
+app.put('/api/container/:containerId', async (req, res) => {
     const { containerId } = req.params;
     const { containerName } = req.body;
     const container = await Container.findByPk(containerId);
@@ -97,7 +97,7 @@ app.post('/api/container/:containerId', async (req, res) => {
 });
 
 // Update a content name
-app.post('/api/content/:contentId', async (req, res) => {
+app.put('/api/content/:contentId', async (req, res) => {
     const { contentId } = req.params;
     const { contentName } = req.body;
     const content = await Content.findByPk(contentId);
@@ -109,7 +109,7 @@ app.post('/api/content/:contentId', async (req, res) => {
 
 //NOTE Update parent locator for container and content (Not being used in current iteration)
 // // Update the locationId of a container
-// app.post('/api/container/:containerId/location', async (req, res) => {
+// app.put('/api/container/:containerId/location', async (req, res) => {
 //     const { containerId } = req.params;
 //     const { locationId } = req.body;
 //     const container = await Container.findByPk(containerId);
@@ -120,7 +120,7 @@ app.post('/api/content/:contentId', async (req, res) => {
 // });
 
 // // Update the containerId of a content
-// app.post('/api/content/:contentId/container', async (req, res) => {
+// app.put('/api/content/:contentId/container', async (req, res) => {
 //     const { contentId } = req.params;
 //     const { containerId } = req.body;
 //     const content = await Content.findByPk(contentId);
