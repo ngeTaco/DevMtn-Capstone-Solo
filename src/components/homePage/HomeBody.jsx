@@ -2,9 +2,12 @@ import { useEffect, useState } from "react";
 import HomeTile from "./HomeTile";
 import axios from "axios";
 import HomeHeader from "./HomeHeader";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function HomeBody() {
     const [locationData, setLocationData] = useState([])
+    const toggleEdit = useSelector((state) => state.isEditing)
+    const dispatch = useDispatch()
 
     // Get all Locations in db
     const getLocations = () => {
