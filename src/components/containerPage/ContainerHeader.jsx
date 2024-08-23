@@ -12,7 +12,7 @@ export default function ContainerHeader({ containerId, newContent, setShowContai
                     variant='outlined'
                     size='large'
                     onClick={() => {
-                        // setShowContainer(true)
+                        setShowContainer(true)
                         navigate(-1)
                     }}
                 >

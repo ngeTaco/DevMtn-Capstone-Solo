@@ -2,19 +2,35 @@ import { useLoaderData } from 'react-router-dom'
 import Header from '../components/common/Header.jsx'
 import LocationBody from '../components/locationPage/LocationBody.jsx'
 import { Outlet } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 
 function Location() {
+
     const locationId = useLoaderData().locationId
+    const [showContainer, setShowContainer] = useState(true)
+    const urlArray = window.location.href.split('/')
+
+    //console.log(urlArray)
+    useEffect(() => {
+        if (urlArray.includes('container')) {
+            setShowContainer(false)
+        }
+    }, [])
 
     return (
         <div>
-
-            <Header />
-            <LocationBody
-                locationId={locationId}
+            {showContainer &&
+                <>
+                    <Header />
+                    <LocationBody
+                        locationId={locationId}
+                    />
+                </>
+            }
+            <Outlet
+                context={setShowContainer}
             />
-            <Outlet />
 
         </div>
     )
