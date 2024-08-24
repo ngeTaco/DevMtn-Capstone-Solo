@@ -36,6 +36,14 @@ export default function ContainerBody(props) {
             })
     }
 
+        // Change a Content Name
+        const changeContentName = (contentId, contentName) => {
+            axios.put(`/api/container/${contentId}`, contentName)
+                .then(() => {
+                    getContents()
+                })
+        }
+
     return (
         <article className="Home">
             <ContainerHeader
@@ -49,6 +57,7 @@ export default function ContainerBody(props) {
                         contentId={content.contentId}
                         name={content.contentName}
                         deleteContent={deleteContent}
+                        changeContentName={changeContentName}
                     />
                 )
             })
