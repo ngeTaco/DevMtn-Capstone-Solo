@@ -1,3 +1,9 @@
+article.Header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 
 article.Home {
     display: flex;
@@ -10,9 +16,8 @@ article.Home {
 
 article.Home div {
     display: flex;
-    width: 50%;
+    min-width: 50%;
     justify-content: space-between;
-    border-radius: 25px;
     text-align: left;
     align-items: center;
     margin: 1rem;
