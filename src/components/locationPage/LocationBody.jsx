@@ -43,6 +43,14 @@ export default function LocationBody(props) {
         })
     }
 
+        // Change a Container Name
+        const changeContainerName = (containerId, containerName) => {
+            axios.put(`/api/container/${containerId}`, containerName)
+                .then(() => {
+                    getLocations()
+                })
+        }
+
     return (
         <article className="Home">
             <LocationHeader
@@ -56,6 +64,7 @@ export default function LocationBody(props) {
                         containerId={container.containerId}
                         name={container.containerName}
                         deleteContainer={deleteContainer}
+                        changeContainerName={changeContainerName}
                     />
                 )
             })
