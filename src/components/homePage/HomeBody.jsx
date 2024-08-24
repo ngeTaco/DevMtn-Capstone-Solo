@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import HomeTile from "./HomeTile";
 import axios from "axios";
+// Import Components
 import HomeHeader from "./HomeHeader";
-import { useDispatch, useSelector } from "react-redux";
+import HomeTile from "./HomeTile";
 
 export default function HomeBody() {
+    
     const [locationData, setLocationData] = useState([])
 
     // Get all Locations in db
@@ -67,7 +68,6 @@ export default function HomeBody() {
                 )
             })
             }
-
         </article>
     )
 }

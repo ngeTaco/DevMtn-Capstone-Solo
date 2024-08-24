@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+// Import Components
 import ContainerTile from "./ContainerTile.jsx";
 import ContainerHeader from "./ContainerHeader.jsx";
 
@@ -36,13 +37,13 @@ export default function ContainerBody(props) {
             })
     }
 
-        // Change a Content Name
-        const changeContentName = (contentId, contentName) => {
-            axios.put(`/api/container/${contentId}`, contentName)
-                .then(() => {
-                    getContents()
-                })
-        }
+    // Change a Content Name
+    const changeContentName = (contentId, contentName) => {
+        axios.put(`/api/content/${contentId}`, contentName)
+            .then(() => {
+                getContents()
+            })
+    }
 
     return (
         <article className="Home">

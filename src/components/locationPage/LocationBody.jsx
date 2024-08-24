@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import LocationTile from "./LocationTile.jsx";
 import axios from "axios";
+// Import Components
+import LocationTile from "./LocationTile.jsx";
 import LocationHeader from "./LocationHeader.jsx";
 
 export default function LocationBody(props) {
@@ -38,24 +39,24 @@ export default function LocationBody(props) {
     // Create new Container in the Location
     const newContainer = (locationId) => {
         axios.post('/api/container', { locationId })
-        .then(() => {
-            getContainers()
-        })
+            .then(() => {
+                getContainers()
+            })
     }
 
-        // Change a Container Name
-        const changeContainerName = (containerId, containerName) => {
-            axios.put(`/api/container/${containerId}`, containerName)
-                .then(() => {
-                    getContainers()
-                })
-        }
+    // Change a Container Name
+    const changeContainerName = (containerId, containerName) => {
+        axios.put(`/api/container/${containerId}`, containerName)
+            .then(() => {
+                getContainers()
+            })
+    }
 
     return (
         <article className="Home">
             <LocationHeader
-            locationId={locationId}
-            newContainer={newContainer}
+                locationId={locationId}
+                newContainer={newContainer}
             />
             {containerData.map((container) => {
                 return (

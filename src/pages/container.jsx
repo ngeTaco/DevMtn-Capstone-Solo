@@ -1,10 +1,11 @@
-import { useLoaderData, useOutletContext } from 'react-router-dom'
+import { useLoaderData } from 'react-router-dom'
+// Import Components
 import Header from '../components/common/Header.jsx'
 import ContainerBody from '../components/containerPage/ContainerBody.jsx'
 
 
 function Container() {
-    const {containerId} = useLoaderData()
+    const { containerId } = useLoaderData()
 
     return (
         <div>

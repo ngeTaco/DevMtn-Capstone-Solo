@@ -1,7 +1,9 @@
+import { useState } from "react"
+//Import Components
 import { Typography, Box, TextField } from "@mui/material"
 import { SquarePlaceHolder } from "../common/Placeholders.jsx"
 import LocationButtons from "./LocationButtons.jsx"
-import { useState } from "react"
+
 
 export default function LocationTile({ containerId, name, deleteContainer, changeContainerName }) {
 
@@ -17,18 +19,21 @@ export default function LocationTile({ containerId, name, deleteContainer, chang
             <section>
                 <SquarePlaceHolder />
                 {isEditable ?
-                <Typography component="h2" variant="h6" >{name}</Typography>
-                :
-                <TextField
+                    <Typography component="h2" variant="h6" >
+                        {name}
+                    </Typography>
+                    :
+                    <TextField
                         variant="filled"
                         type="text"
                         value={containerName}
-                        onChange={(e) => setContainerName(e.target.value)}
+                        onChange={(e) =>
+                            setContainerName(e.target.value)}
                     />
-            }
+                }
             </section>
             <section>
-                <LocationButtons 
+                <LocationButtons
                     containerId={containerId}
                     deleteContainer={deleteContainer}
                     isEditableState={{ isEditable, setIsEditable }}

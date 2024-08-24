@@ -1,6 +1,8 @@
+import { useState } from "react"
+// Import Components
 import { Typography, Box, TextField } from "@mui/material"
 import ContainerButtons from "./ContainerButtons.jsx"
-import { useState } from "react"
+
 
 export default function ContainerTile({ contentId, name, deleteContent, changeContentName }) {
 
@@ -15,13 +17,16 @@ export default function ContainerTile({ contentId, name, deleteContent, changeCo
         }}>
             <section>
                 {isEditable ?
-                    <Typography component="h2" variant="h6" >{name}</Typography>
+                    <Typography component="h2" variant="h6" >
+                        {name}
+                    </Typography>
                     :
                     <TextField
                         variant="filled"
                         type="text"
                         value={contentName}
-                        onChange={(e) => setContentName(e.target.value)}
+                        onChange={(e) =>
+                            setContentName(e.target.value)}
                     />
                 }
             </section>

@@ -1,24 +1,29 @@
+import { useNavigate } from 'react-router';
+// Import Components
 import { Button, IconButton } from '@mui/material';
 import { Edit, Save, Delete, ArrowForward } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
+
 
 export default function HomeButtons({ locationId, deleteLocation, isEditableState, changeLocationName, locationName }) {
+
     const { isEditable, setIsEditable } = isEditableState
+    const navigate = useNavigate()
 
     return (
         <div className="TileButtons">
             {isEditable ?
                 <>
-                    <Link to={`location/${locationId}`}>
-                        <Button
-                            color='primary'
-                            variant='outlined'
-                            size='large'
-                            sx={{ ml: 2 }}
-                        >
-                            <ArrowForward />
-                        </Button>
-                    </Link>
+                    <Button
+                        color='primary'
+                        variant='outlined'
+                        size='large'
+                        sx={{ ml: 2 }}
+                        onClick={() =>
+                            navigate(`location/${locationId}`)
+                        }
+                    >
+                        <ArrowForward />
+                    </Button>
 
                     <Button
                         color="secondary"
@@ -26,7 +31,8 @@ export default function HomeButtons({ locationId, deleteLocation, isEditableStat
                         size='large'
                         sx={{ ml: 2 }}
                         onClick={() => {
-                            setIsEditable(false)}}
+                            setIsEditable(false)
+                        }}
                     >
                         <Edit />
                     </Button>
@@ -38,7 +44,8 @@ export default function HomeButtons({ locationId, deleteLocation, isEditableStat
                         sx={{ ml: 2 }}
                         onClick={() => {
                             changeLocationName(locationId, locationName)
-                            setIsEditable(true)}}
+                            setIsEditable(true)
+                        }}
                     >
                         <Save />
                     </IconButton>
@@ -46,7 +53,8 @@ export default function HomeButtons({ locationId, deleteLocation, isEditableStat
                     <IconButton
                         color="warning"
                         sx={{ ml: 2 }}
-                        onClick={() => deleteLocation(locationId)}>
+                        onClick={() =>
+                            deleteLocation(locationId)}>
                         <Delete />
                     </IconButton>
                 </>

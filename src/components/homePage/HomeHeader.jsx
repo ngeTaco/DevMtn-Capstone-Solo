@@ -2,6 +2,7 @@ import { Button } from '@mui/material';
 import { Add } from '@mui/icons-material';
 
 export default function HomeHeader({ newLocation }) {
+
     return (
         <div className="BodyHeader">
             <div></div>
@@ -9,7 +10,8 @@ export default function HomeHeader({ newLocation }) {
                 color="secondary"
                 variant='outlined'
                 size='large'
-                onClick={() => newLocation()}
+                onClick={() =>
+                    newLocation()}
             >
                 <Add />
             </Button>

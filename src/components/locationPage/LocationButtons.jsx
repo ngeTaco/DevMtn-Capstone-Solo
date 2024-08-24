@@ -1,9 +1,11 @@
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+// Import Components
 import { Button, IconButton } from '@mui/material';
 import { Edit, Save, Delete, ArrowForward } from '@mui/icons-material';
-import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 
 export default function LocationButtons({ containerId, deleteContainer, isEditableState, changeContainerName, containerName }) {
+
     const { isEditable, setIsEditable } = isEditableState
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -31,7 +33,8 @@ export default function LocationButtons({ containerId, deleteContainer, isEditab
                         size='large'
                         sx={{ ml: 2 }}
                         onClick={() => {
-                            setIsEditable(false)}}
+                            setIsEditable(false)
+                        }}
                     >
                         <Edit />
                     </Button>
@@ -43,7 +46,8 @@ export default function LocationButtons({ containerId, deleteContainer, isEditab
                         sx={{ ml: 2 }}
                         onClick={() => {
                             changeContainerName(containerId, containerName)
-                            setIsEditable(true)}}
+                            setIsEditable(true)
+                        }}
                     >
                         <Save />
                     </IconButton>
@@ -51,7 +55,8 @@ export default function LocationButtons({ containerId, deleteContainer, isEditab
                     <IconButton
                         color="warning"
                         sx={{ ml: 2 }}
-                        onClick={() => deleteContainer(containerId)}
+                        onClick={() =>
+                            deleteContainer(containerId)}
                     >
                         <Delete />
                     </IconButton>

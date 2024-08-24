@@ -14,7 +14,8 @@ export default function ContainerButtons({ contentId, deleteContent, isEditableS
                     size='large'
                     sx={{ ml: 2 }}
                     onClick={() => {
-                        setIsEditable(false)}}
+                        setIsEditable(false)
+                    }}
                 >
                     <Edit />
                 </Button>
@@ -25,7 +26,8 @@ export default function ContainerButtons({ contentId, deleteContent, isEditableS
                         sx={{ ml: 2 }}
                         onClick={() => {
                             changeContentName(contentId, contentName)
-                            setIsEditable(true)}}
+                            setIsEditable(true)
+                        }}
                     >
                         <Save />
                     </IconButton>
@@ -33,7 +35,8 @@ export default function ContainerButtons({ contentId, deleteContent, isEditableS
                     <IconButton
                         color="warning"
                         sx={{ ml: 2 }}
-                        onClick={() => deleteContent(contentId)}
+                        onClick={() =>
+                            deleteContent(contentId)}
                     >
                         <Delete />
                     </IconButton>
