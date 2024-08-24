@@ -47,7 +47,7 @@ export default function LocationBody(props) {
         const changeContainerName = (containerId, containerName) => {
             axios.put(`/api/container/${containerId}`, containerName)
                 .then(() => {
-                    getLocations()
+                    getContainers()
                 })
         }
 

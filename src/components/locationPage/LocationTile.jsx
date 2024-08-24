@@ -1,6 +1,7 @@
 import { Typography, Box, TextField } from "@mui/material"
 import { SquarePlaceHolder } from "../common/Placeholders.jsx"
 import LocationButtons from "./LocationButtons.jsx"
+import { useState } from "react"
 
 export default function LocationTile({ containerId, name, deleteContainer, changeContainerName }) {
 
