@@ -43,33 +43,45 @@ app.get('/api/content/:contentId', async (req, res) => {
 // Get all containers with the same location ID
 app.get('/api/containers/:locationId', async (req, res) => {
     const { locationId } = req.params;
-    const containers = await Container.findAll({ where: { locationId: (locationId), }, });
+    const containers = await Container.findAll({ 
+        where: { locationId: locationId }, 
+        order: [['containerId', 'ASC']]
+    });
     res.json(containers);
 })
 
 // Gets all contents with the same container ID
 app.get('/api/contents/:containerId', async (req, res) => {
     const { containerId } = req.params;
-    const contents = await Content.findAll({ where: { containerId: (containerId), }, });
+    const contents = await Content.findAll({ 
+        where: { containerId: (containerId), }, 
+        order: [['contentId', 'ASC']]
+    });
     res.json(contents);
 })
 
 //Note Get all in database
 // Get all locations
 app.get('/api/all/locations', async (req, res) => {
-    const allLocations = await Location.findAll();
+    const allLocations = await Location.findAll({
+        order: [['locationId', 'ASC']]
+    });
     res.json(allLocations);
 });
 
 // Get all containers
 app.get('/api/all/containers', async (req, res) => {
-    const allContainers = await Container.findAll();
+    const allContainers = await Container.findAll({
+        order: [['containerId', 'ASC']]
+    });
     res.json(allContainers);
 });
 
 // Get all contents
 app.get('/api/all/contents', async (req, res) => {
-    const allContents = await Content.findAll();
+    const allContents = await Content.findAll({
+        order: [['contentId', 'ASC']]
+    });
     res.json(allContents);
 });
 
