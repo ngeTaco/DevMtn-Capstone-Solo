@@ -6,8 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 export default function HomeBody() {
     const [locationData, setLocationData] = useState([])
-    const toggleEdit = useSelector((state) => state.isEditing)
-    const dispatch = useDispatch()
 
     // Get all Locations in db
     const getLocations = () => {
@@ -45,8 +43,8 @@ export default function HomeBody() {
     }
 
     // Change a Location Name
-    const changeLocationName = (locationId, newLocationName) => {
-        axios.put(`/api/location/${locationId}`, { locationName: newLocationName })
+    const changeLocationName = (locationId, locationName) => {
+        axios.put(`/api/location/${locationId}`, locationName)
             .then(() => {
                 getLocations()
             })
@@ -64,6 +62,7 @@ export default function HomeBody() {
                         locationId={location.locationId}
                         name={location.locationName}
                         deleteLocation={deleteLocation}
+                        changeLocationName={changeLocationName}
                     />
                 )
             })
