@@ -48,6 +48,13 @@ At current Version 1.0 users can
 	- User upload 1 image per item
 	- Hovering over thumbnail displays larger image
 
+### Iteration 2.5
+- Home page
+- Location page
+	- Reassign Containers to other Locations
+- Container Page
+	- Reassign Contents to other Containers
+
 ### Iteration 3
 - Home Page
 - Location Page
