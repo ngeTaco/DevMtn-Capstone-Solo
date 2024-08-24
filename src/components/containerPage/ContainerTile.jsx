@@ -14,10 +14,14 @@ export default function ContainerTile({ contentId, name, deleteContent, changeCo
             bgcolor: 'grey.100',
             border: '2px solid grey',
             padding: '1rem',
+            borderRadius: 10,
         }}>
             <section>
                 {isEditable ?
-                    <Typography component="h2" variant="h6" >
+                    <Typography
+                        component="h2"
+                        variant="h6"
+                    >
                         {name}
                     </Typography>
                     :
@@ -25,6 +29,11 @@ export default function ContainerTile({ contentId, name, deleteContent, changeCo
                         variant="filled"
                         type="text"
                         value={contentName}
+                        sx={{
+                            width: '500%',
+                            borderRadius: 1
+                        }}
+                        label="Location Name"
                         onChange={(e) =>
                             setContentName(e.target.value)}
                     />

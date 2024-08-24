@@ -15,11 +15,15 @@ export default function LocationTile({ containerId, name, deleteContainer, chang
             bgcolor: 'grey.100',
             border: '2px solid grey',
             padding: '1rem',
+            borderRadius: 10,
         }}>
             <section>
                 <SquarePlaceHolder />
                 {isEditable ?
-                    <Typography component="h2" variant="h6" >
+                    <Typography
+                        component="h2"
+                        variant="h6"
+                    >
                         {name}
                     </Typography>
                     :
@@ -27,6 +31,11 @@ export default function LocationTile({ containerId, name, deleteContainer, chang
                         variant="filled"
                         type="text"
                         value={containerName}
+                        sx={{
+                            width: '500%',
+                            borderRadius: 1
+                        }}
+                        label="Container Name"
                         onChange={(e) =>
                             setContainerName(e.target.value)}
                     />

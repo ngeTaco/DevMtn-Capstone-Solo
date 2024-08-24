@@ -15,11 +15,15 @@ export default function HomeTile({ locationId, name, deleteLocation, changeLocat
             bgcolor: 'grey.100',
             border: '2px solid grey',
             padding: '1rem',
+            borderRadius: 10,
         }}>
             <section>
                 <CirclePlaceHolder />
                 {isEditable ?
-                    <Typography component="h2" variant="h6" >
+                    <Typography
+                        component="h2"
+                        variant="h6"
+                    >
                         {name}
                     </Typography>
                     :
@@ -27,6 +31,11 @@ export default function HomeTile({ locationId, name, deleteLocation, changeLocat
                         variant="filled"
                         type="text"
                         value={locationName}
+                        sx={{
+                            width: '500%',
+                            borderRadius: 1
+                        }}
+                        label="Location Name"
                         onChange={(e) =>
                             setLocationName(e.target.value)}
                     />
