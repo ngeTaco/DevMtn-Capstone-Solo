@@ -15,7 +15,7 @@ export default function HomeTile({ locationId, name, deleteLocation, changeLocat
             bgcolor: 'grey.100',
             border: '2px solid grey',
             padding: '1rem',
-            borderRadius: 10,
+            borderRadius: 1,
         }}>
             <section>
                 <CirclePlaceHolder />

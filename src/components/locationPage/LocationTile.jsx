@@ -15,7 +15,7 @@ export default function LocationTile({ containerId, name, deleteContainer, chang
             bgcolor: 'grey.100',
             border: '2px solid grey',
             padding: '1rem',
-            borderRadius: 10,
+            borderRadius: 1,
         }}>
             <section>
                 <SquarePlaceHolder />
