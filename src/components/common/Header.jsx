@@ -1,7 +1,7 @@
+import { useNavigate } from "react-router"
+// Import Components
 import { IconButton, Typography } from "@mui/material"
 import { Warehouse } from "@mui/icons-material"
-import { useNavigate } from "react-router"
-
 
 export default function Header(props) {
 
