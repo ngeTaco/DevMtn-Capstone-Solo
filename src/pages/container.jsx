@@ -5,7 +5,6 @@ import ContainerBody from '../components/containerPage/ContainerBody.jsx'
 
 function Container() {
     const {containerId} = useLoaderData()
-    const {setShowContainer} = useOutletContext()
 
     return (
         <div>
@@ -13,7 +12,6 @@ function Container() {
             <Header />
             <ContainerBody
                 containerId={containerId}
-                setShowContainer={setShowContainer}
             />
 
         </div>

@@ -1,21 +1,26 @@
 import { Button, IconButton } from '@mui/material';
 import { Edit, Save, Delete, ArrowForward } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 export default function LocationButtons({ containerId, deleteContainer }) {
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+
     return (
         <div className="TileButtons">
-            <Link to={`container/${containerId}`}>
                 <Button
                     color='primary'
                     variant='outlined'
                     size='large'
                     sx={{ ml: 2 }}
-
+                    onClick={() => {
+                        dispatch({ type: 'SHOW_CONTAINER'})
+                        navigate(`container/${containerId}`)
+                    }}
                 >
                     <ArrowForward />
                 </Button>
-            </Link>
 
             <Button
                 color="secondary"

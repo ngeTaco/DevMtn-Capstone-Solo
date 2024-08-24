@@ -1,9 +1,11 @@
 import { Button } from '@mui/material';
 import { ArrowBack, Add } from '@mui/icons-material';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
-export default function ContainerHeader({ containerId, newContent, setShowContainer }) {
-    const navigate = useNavigate();
+export default function ContainerHeader({ containerId, newContent }) {
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     return (
         <div className="BodyHeader">
@@ -12,7 +14,7 @@ export default function ContainerHeader({ containerId, newContent, setShowContai
                     variant='outlined'
                     size='large'
                     onClick={() => {
-                        setShowContainer(true)
+                        dispatch({ type: 'SHOW_CONTAINER'})
                         navigate(-1)
                     }}
                 >

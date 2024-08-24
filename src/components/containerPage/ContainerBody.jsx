@@ -5,7 +5,7 @@ import ContainerHeader from "./ContainerHeader.jsx";
 
 export default function ContainerBody(props) {
 
-    const { containerId, setShowContainer } = props
+    const { containerId } = props
     const [contentData, setContentData] = useState([])
 
     // Get and Set Contents for the current Container
@@ -41,7 +41,6 @@ export default function ContainerBody(props) {
             <ContainerHeader
                 containerId={containerId}
                 newContent={newContent}
-                setShowContainer={setShowContainer}
             />
             {contentData.map((content) => {
                 return (

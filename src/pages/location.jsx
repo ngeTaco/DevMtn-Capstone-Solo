@@ -3,20 +3,17 @@ import Header from '../components/common/Header.jsx'
 import LocationBody from '../components/locationPage/LocationBody.jsx'
 import { Outlet } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 
 function Location() {
 
     const locationId = useLoaderData().locationId
-    const [showContainer, setShowContainer] = useState(true)
-    const urlArray = window.location.href.split('/')
 
-    //console.log(urlArray)
-    useEffect(() => {
-        if (urlArray.includes('container')) {
-            setShowContainer(false)
-        }
-    }, [])
+
+    const showContainer = useSelector((state) => state.showContainerPage)
+    const dispatch = useDispatch()
+
 
     return (
         <div>
@@ -29,7 +26,6 @@ function Location() {
                 </>
             }
             <Outlet
-                context={setShowContainer}
             />
 
         </div>
